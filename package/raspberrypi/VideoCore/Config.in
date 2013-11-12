@@ -1,0 +1,13 @@
+config BR2_PACKAGE_VIDEOCORE
+	bool "Raspberry Pi VideoCore drivers"
+	help
+	  These are the binary VideoCore drivers from Broadcom.
+	  https://github.com/raspberrypi/userland
+
+if BR2_PACKAGE_VIDEOCORE
+config BR2_PACKAGE_VIDEOCORE_VERSION
+	string "Github revision of VideoCore tar ball"
+	default b58a0498f1630008dd46c80686bd8fcff79e70ca
+	help
+	  Enter the SHA of your preferred revision of the RPI userland files (https://github.com/raspberrypi/userland)
+endif
