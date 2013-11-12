@@ -63,6 +63,19 @@ config BR2_TOOLCHAIN_EXTERNAL_LINARO_2013_04
 
 	  To use this toolchain, you must disable soft float usage.
 
+config BR2_TOOLCHAIN_EXTERNAL_RASPBERRYPI_ARM
+	bool "Raspberry Pi ARMv6 hardfloat"
+	depends on BR2_arm
+	depends on BR2_arm1176jzf_s
+	select BR2_TOOLCHAIN_EXTERNAL_GLIBC
+	select BR2_INSTALL_LIBSTDCPP
+	select BR2_TOOLCHAIN_HAS_NATIVE_RPC
+	select BR2_USE_WCHAR
+	select BR2_TOOLCHAIN_HAS_THREADS
+	help
+	  Toolchain used for building for Raspberry Pi.
+
+
 comment "Linaro toolchains available for Cortex-A{5,7,8,9,15} and the EABIhf ABI"
 	depends on BR2_arm
 	depends on BR2_GCC_TARGET_ARCH != "armv7-a"
@@ -832,12 +845,20 @@ config BR2_TOOLCHAIN_EXTERNAL_PREFIX
 	default "bfin-linux-uclibc"	 if BR2_TOOLCHAIN_EXTERNAL_BLACKFIN_UCLINUX_2012R1 && BR2_BINFMT_FDPIC
 	default "bfin-uclinux"		 if BR2_TOOLCHAIN_EXTERNAL_BLACKFIN_UCLINUX_2012R2 && BR2_BINFMT_FLAT
 	default "bfin-linux-uclibc"	 if BR2_TOOLCHAIN_EXTERNAL_BLACKFIN_UCLINUX_2012R2 && BR2_BINFMT_FDPIC
+	default "arm-raspberrypi-linux-gnueabi" if BR2_TOOLCHAIN_EXTERNAL_RASPBERRYPI_ARM
 	default $(BR2_TOOLCHAIN_EXTERNAL_CUSTOM_PREFIX) \
 					 if BR2_TOOLCHAIN_EXTERNAL_CUSTOM
 
 config BR2_TOOLCHAIN_EXTERNAL_GLIBC
 	bool
 	select BR2_TOOLCHAIN_USES_GLIBC
+	select BR2_LARGEFILE
+	select BR2_INET_IPV6
+	select BR2_USE_WCHAR
+	select BR2_ENABLE_LOCALE
+	select BR2_TOOLCHAIN_HAS_THREADS
+	select BR2_TOOLCHAIN_HAS_THREADS_DEBUG
+	select BR2_TOOLCHAIN_HAS_SHADOW_PASSWORDS
 
 config BR2_TOOLCHAIN_EXTERNAL_UCLIBC
 	bool
