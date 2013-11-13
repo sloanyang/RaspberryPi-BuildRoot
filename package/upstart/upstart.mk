@@ -1,5 +1,5 @@
 UPSTART_VERSION = 1.6.1
-UPSTART_SITE = http://upstart.ubuntu.com/download/$(UPSTART_VERSION)
+UPSTART_SITE = https://www.dropbox.com/s/7teogmjqa4gy637
 UPSTART_SOURCE = upstart-$(UPSTART_VERSION).tar.gz
 UPSTART_INSTALL_STAGING = YES
 UPSTART_DEPENDENCIES = udev dbus libnih json-c

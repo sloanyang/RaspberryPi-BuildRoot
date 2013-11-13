@@ -66,6 +66,8 @@ LIB_EXTERNAL_LIBS+=libthread_db.so
 endif # gdbserver
 endif # ! no threads
 
+HOST_ARCH:=$(shell uname -m)
+
 # Details about sysroot directory selection.
 #
 # To find the sysroot directory:
