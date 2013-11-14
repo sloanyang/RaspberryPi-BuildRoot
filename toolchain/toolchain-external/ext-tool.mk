@@ -305,11 +305,11 @@ TOOLCHAIN_EXTERNAL_SITE = http://sources.buildroot.net/
 TOOLCHAIN_EXTERNAL_SOURCE = microblaze-unknown-linux-gnu.tgz
 else ifeq ($(BR2_TOOLCHAIN_EXTERNAL_RASPBERRYPI_ARM),y)
 ifeq ($(HOST_ARCH),x86_64)
-TOOLCHAIN_EXTERNAL_SITE=http://bsquask.com/downloads/toolchains/
+TOOLCHAIN_EXTERNAL_SITE=https://www.dropbox.com/s/8wex046vvgj9yrz/
 else
-TOOLCHAIN_EXTERNAL_SITE=http://bsquask.com/downloads/toolchains/x86/
+TOOLCHAIN_EXTERNAL_SITE=https://www.dropbox.com/s/8wex046vvgj9yrz
 endif
-TOOLCHAIN_EXTERNAL_SOURCE=arm-raspberrypi-linux-gnueabi.tar.bz2
+TOOLCHAIN_EXTERNAL_SOURCE=arm-bcm2708hardfp-linux-gnueabi.tar.bz2
 else ifeq ($(BR2_TOOLCHAIN_EXTERNAL_LINARO_AARCH64_13_04),y)
 TOOLCHAIN_EXTERNAL_SITE = https://releases.linaro.org/13.04/components/toolchain/binaries/
 TOOLCHAIN_EXTERNAL_SOURCE = gcc-linaro-aarch64-linux-gnu-4.7-2013.04-20130415_linux.tar.xz
