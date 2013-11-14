@@ -940,6 +940,7 @@ source "package/raspberrypi/omxplayer/Config.in"
 source "package/libnih/Config.in"
 source "package/upstart/Config.in"
 source "package/harfbuzz/Config.in"
+source "package/libsecret/Config.in"
 endmenu
 
 endmenu
