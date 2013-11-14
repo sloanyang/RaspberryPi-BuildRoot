@@ -1,4 +1,7 @@
 config BR2_PACKAGE_LIBSECRET
+	select BR2_PACKAGE_LIBGLIB2
+	select BR2_PACKAGE_LIBGCRYPT
+	select 
 	bool "libsecret"
 	help
 	  The libsecret package contains a GObject based library for accessing the Secret Service API.
