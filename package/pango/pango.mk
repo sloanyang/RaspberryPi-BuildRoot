@@ -4,11 +4,11 @@
 #
 ################################################################################
 
-PANGO_VERSION_MAJOR = 1.28
-PANGO_VERSION_MINOR = 4
+PANGO_VERSION_MAJOR = 1.32
+PANGO_VERSION_MINOR = 1
 PANGO_VERSION = $(PANGO_VERSION_MAJOR).$(PANGO_VERSION_MINOR)
 
-PANGO_SOURCE = pango-$(PANGO_VERSION).tar.bz2
+PANGO_SOURCE = pango-$(PANGO_VERSION).tar.xz
 PANGO_SITE = http://ftp.gnome.org/pub/GNOME/sources/pango/$(PANGO_VERSION_MAJOR)
 PANGO_AUTORECONF = YES
 PANGO_INSTALL_STAGING = YES
