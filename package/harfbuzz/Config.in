@@ -1,0 +1,6 @@
+config BR2_PACKAGE_HARFBUZZ
+	bool "harfbuzz"
+	help
+	  The Harfbuzz package contains an OpenType text shaping engine.
+	  This package is known to build and work properly using an LFS-7.2 platform.
+
