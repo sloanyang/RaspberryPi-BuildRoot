@@ -942,6 +942,8 @@ source "package/upstart/Config.in"
 source "package/harfbuzz/Config.in"
 source "package/libsecret/Config.in"
 source "package/geoclue/Config.in"
+source "package/gconf/Config.in"
+source "package/gobject-introspection/Config.in"
 endmenu
 
 endmenu
