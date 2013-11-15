@@ -941,6 +941,7 @@ source "package/libnih/Config.in"
 source "package/upstart/Config.in"
 source "package/harfbuzz/Config.in"
 source "package/libsecret/Config.in"
+source "package/geoclue/Config.in"
 endmenu
 
 endmenu

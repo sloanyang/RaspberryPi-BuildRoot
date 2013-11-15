@@ -1,0 +1,5 @@
+config BR2_PACKAGE_GEOCLUE
+	bool "geoclue"
+	help
+	  GeoClue is a modular geoinformation service built on top of the D-Bus messaging system. The goal of the GeoClue project is to make creating location-aware applications as simple as possible.
+
