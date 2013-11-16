@@ -28,20 +28,21 @@ DBUS_CONF_OPT = --with-dbus-user=dbus \
 		--disable-dnotify \
 		--localstatedir=/var \
 		--with-system-socket=/var/run/dbus/system_bus_socket \
-		--with-system-pid-file=/var/run/messagebus.pid
+		--with-system-pid-file=/var/run/messagebus.pid \
+		--with-sysroot=$(STAGING_DIR)
 
 ifeq ($(BR2_microblaze),y)
 # microblaze toolchain doesn't provide inotify_rm_* but does have sys/inotify.h
 DBUS_CONF_OPT += --disable-inotify
 endif
 
-ifeq ($(BR2_DBUS_EXPAT),y)
-DBUS_CONF_OPT += --with-xml=expat
-DBUS_DEPENDENCIES += expat
-else
+#ifeq ($(BR2_DBUS_EXPAT),y)
+#DBUS_CONF_OPT += --with-xml=expat
+#DBUS_DEPENDENCIES += expat
+#else
 DBUS_CONF_OPT += --with-xml=libxml
 DBUS_DEPENDENCIES += libxml2
-endif
+#endif
 
 ifeq ($(BR2_PACKAGE_XLIB_LIBX11),y)
 DBUS_CONF_OPT += --with-x

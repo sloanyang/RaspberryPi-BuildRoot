@@ -5,7 +5,7 @@
 ################################################################################
 
 PANGO_VERSION_MAJOR = 1.32
-PANGO_VERSION_MINOR = 1
+PANGO_VERSION_MINOR = 3
 PANGO_VERSION = $(PANGO_VERSION_MAJOR).$(PANGO_VERSION_MINOR)
 
 PANGO_SOURCE = pango-$(PANGO_VERSION).tar.xz
@@ -38,9 +38,14 @@ PANGO_CONF_ENV = ac_cv_func_posix_getpwuid_r=yes glib_cv_stack_grows=no \
 		gl_cv_func_mkdir_trailing_slash_bug=no gl_cv_func_mkstemp_limitations=no \
 		ac_cv_func_working_mktime=yes jm_cv_func_working_re_compile_pattern=yes \
 		ac_use_included_regex=no gl_cv_c_restrict=no \
-		ac_cv_path_FREETYPE_CONFIG=$(STAGING_DIR)/usr/bin/freetype-config
+		ac_cv_path_FREETYPE_CONFIG=$(STAGING_DIR)/usr/bin/freetype-config \
+		PKG_CONFIG_DIR= \
+		PKG_CONFIG_LIBDIR=${STAGING_DIR}/usr/lib/pkgconfig:${STAGING_DIR}/usr/share/pkgconfig \
+		PKG_CONFIG_PATH=${STAGING_DIR}/usr/lib/pkgconfig:${STAGING_DIR}/usr/share/pkgconfig \
+		PKG_CONFIG_SYSROOT_DIR=${STAGING_DIR}
 
-PANGO_CONF_OPT = --enable-explicit-deps=no --disable-debug
+
+PANGO_CONF_OPT = --enable-explicit-deps=no --disable-debug --with-sysroot=$(STAGING_DIR)
 
 PANGO_DEPENDENCIES = $(if $(BR2_NEEDS_GETTEXT_IF_LOCALE),gettext) \
 	host-pkgconf \
