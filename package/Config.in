@@ -944,6 +944,8 @@ source "package/libsecret/Config.in"
 source "package/geoclue/Config.in"
 source "package/gconf/Config.in"
 source "package/subversion/Config.in"
+source "package/python-zope-interface/Config.in"
+source "package/python-twisted/Config.in"
 source "package/gobject-introspection/Config.in"
 endmenu
 

@@ -1,0 +1,5 @@
+config BR2_PACKAGE_PYTHON_ZOPE_INTERFACE
+	bool "python-zope-interface"
+	depends on BR2_PACKAGE_PYTHON
+	help
+	  The feature of this package is to be added.
